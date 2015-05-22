@@ -17,50 +17,6 @@ function createCanvas (id, w, h, zIndex) {
 	return canvas.getContext('2d');
 }
 
-function drawCube(x, y, w, h, wallH, ctx) {
-	var layerH = wallH;
-	var tileW = w;
-	var tileH = h;
-
-	var tileOffsetX = x + tileW / 2;
-	var tileOffsetY = y;
-
-	ctx.strokeStyle = '#f00';
-	ctx.lineWidth = 0.25;
-
-	ctx.fillStyle = '#6f6';
-	ctx.beginPath();
-	ctx.moveTo(tileOffsetX, tileOffsetY);
-	ctx.lineTo(tileOffsetX + tileW / 2, tileOffsetY + tileH / 2);
-	ctx.lineTo(tileOffsetX, tileOffsetY + tileH);
-	ctx.lineTo(tileOffsetX - tileW / 2, tileOffsetY + tileH / 2);
-	ctx.closePath();
-	ctx.fill();
-	ctx.stroke();
-
-	// SW face
-	ctx.fillStyle = '#6c6';
-	ctx.beginPath();
-	ctx.moveTo(tileOffsetX - tileW / 2, tileOffsetY + tileH / 2);
-	ctx.lineTo(tileOffsetX, tileOffsetY + tileH);
-	ctx.lineTo(tileOffsetX, tileOffsetY + tileH + layerH);
-	ctx.lineTo(tileOffsetX - tileW / 2, tileOffsetY + tileH / 2 + layerH);
-	ctx.closePath();
-	ctx.fill();
-	ctx.stroke();
-
-	// SE face
-	ctx.fillStyle = '#696';
-	ctx.beginPath();
-	ctx.moveTo(tileOffsetX + tileW / 2, tileOffsetY + tileH / 2);
-	ctx.lineTo(tileOffsetX + tileW / 2, tileOffsetY + tileH / 2 + layerH);
-	ctx.lineTo(tileOffsetX, tileOffsetY + tileH + layerH);
-	ctx.lineTo(tileOffsetX, tileOffsetY + tileH);
-	ctx.closePath();
-	ctx.fill();
-	ctx.stroke();
-}
-
 function Timer(callback, delay) {
 	var timerId, start, remaining = delay;
 

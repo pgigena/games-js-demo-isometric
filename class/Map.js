@@ -17,32 +17,53 @@ Map.prototype.buildMap = function () {
 
 	// [z][y][x]
 	this.collisionMap[0] = new Array();
-	this.collisionMap[0][0] = new Array(0,0,0,0,0,0,0);
-	this.collisionMap[0][1] = new Array(0,0,0,1,0,0,0);
+	this.collisionMap[0][0] = new Array(0,0,0,0,0,1,0);
+	this.collisionMap[0][1] = new Array(0,0,0,1,1,1,0);
 	this.collisionMap[0][2] = new Array(0,0,0,0,0,0,0);
 	this.collisionMap[0][3] = new Array(0,0,0,0,0,0,0);
 	this.collisionMap[0][4] = new Array(0,0,0,0,0,0,0);
 
 	this.collisionMap[1] = new Array();
-	this.collisionMap[1][0] = new Array(0,0,0,1,1,1,1);
+	this.collisionMap[1][0] = new Array(0,0,0,0,0,1,0);
 	this.collisionMap[1][1] = new Array(0,0,0,1,0,0,0);
-	this.collisionMap[1][2] = new Array(0,0,0,1,0,0,0);
+	this.collisionMap[1][2] = new Array(0,0,0,0,0,0,0);
 	this.collisionMap[1][3] = new Array(0,0,0,0,0,0,0);
 	this.collisionMap[1][4] = new Array(0,0,0,0,0,0,0);
 
 	this.collisionMap[2] = new Array();
-	this.collisionMap[2][0] = new Array(0,0,0,1,1,0,1);
-	this.collisionMap[2][1] = new Array(0,0,0,1,1,0,0);
-	this.collisionMap[2][2] = new Array(0,1,1,1,1,1,0);
-	this.collisionMap[2][3] = new Array(0,0,1,1,1,1,0);
-	this.collisionMap[2][4] = new Array(1,0,0,0,0,0,0);
+	this.collisionMap[2][0] = new Array(0,0,0,0,0,1,0);
+	this.collisionMap[2][1] = new Array(0,0,0,1,0,0,0);
+	this.collisionMap[2][2] = new Array(0,0,0,0,0,0,0);
+	this.collisionMap[2][3] = new Array(0,0,0,0,0,0,0);
+	this.collisionMap[2][4] = new Array(0,0,0,0,0,0,0);
 
 	this.collisionMap[3] = new Array();
-	this.collisionMap[3][0] = new Array(1,1,1,1,1,1,1);
-	this.collisionMap[3][1] = new Array(1,1,1,1,1,1,1);
-	this.collisionMap[3][2] = new Array(1,1,1,1,1,1,1);
-	this.collisionMap[3][3] = new Array(1,1,1,1,1,1,1);
-	this.collisionMap[3][4] = new Array(1,1,1,1,1,1,1);
+	this.collisionMap[3][0] = new Array(0,0,0,0,0,1,0);
+	this.collisionMap[3][1] = new Array(0,0,0,1,0,0,0);
+	this.collisionMap[3][2] = new Array(0,0,0,0,0,0,0);
+	this.collisionMap[3][3] = new Array(0,0,0,0,0,0,0);
+	this.collisionMap[3][4] = new Array(0,0,0,0,0,0,0);
+
+	this.collisionMap[4] = new Array();
+	this.collisionMap[4][0] = new Array(0,0,0,1,1,1,1);
+	this.collisionMap[4][1] = new Array(0,0,0,1,0,0,0);
+	this.collisionMap[4][2] = new Array(0,0,0,1,0,0,0);
+	this.collisionMap[4][3] = new Array(0,0,0,0,0,0,0);
+	this.collisionMap[4][4] = new Array(0,0,0,0,0,0,0);
+
+	this.collisionMap[5] = new Array();
+	this.collisionMap[5][0] = new Array(0,0,0,1,1,0,1);
+	this.collisionMap[5][1] = new Array(0,0,0,1,1,0,0);
+	this.collisionMap[5][2] = new Array(0,1,1,1,1,1,0);
+	this.collisionMap[5][3] = new Array(0,0,1,1,1,1,0);
+	this.collisionMap[5][4] = new Array(1,0,0,0,0,0,0);
+
+	this.collisionMap[6] = new Array();
+	this.collisionMap[6][0] = new Array(1,1,1,1,1,1,1);
+	this.collisionMap[6][1] = new Array(1,1,1,1,1,1,1);
+	this.collisionMap[6][2] = new Array(1,1,1,1,1,1,1);
+	this.collisionMap[6][3] = new Array(1,1,1,1,1,1,1);
+	this.collisionMap[6][4] = new Array(1,1,1,1,1,1,1);
 };
 
 Map.prototype.draw = function (ctx) {
@@ -62,7 +83,7 @@ Map.prototype.draw = function (ctx) {
 
 				if (this.collisionMap[z][y][x]) {
 //					this.drawCube(offsetX, offsetY, ctx);
-					drawCube(offsetX, offsetY, this.tileW, this.tileH, this.layerH, ctx);
+					Graphics.drawCube(offsetX, offsetY, this.tileW, this.tileH, this.layerH, ctx);
 				}
 			}
 		}

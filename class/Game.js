@@ -37,7 +37,7 @@ Game.prototype.run = function () {
 
 Game.prototype.createDomElements = function () {
 	this.graphics.map = createCanvas('map', this.resolution.w, this.resolution.h, 0);
-	this.graphics.game = createCanvas('game', this.resolution.w, this.resolution.h, 1);
+//	this.graphics.game = createCanvas('game', this.resolution.w, this.resolution.h, 1);
 //	this.graphics.hud = createCanvas('hud', this.resolution.w, this.resolution.h, 2);
 };
 
